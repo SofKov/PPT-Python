@@ -1,6 +1,9 @@
 #Import Presentation from pptx module (pip install module)
 from pptx import Presentation
-from pptx.util import Inches
+from pptx.util import Inches, Pt
+
+
+
 
 #Create PPT Presentation 
 prs = Presentation()
@@ -75,12 +78,57 @@ title3 = slide3.shapes.title
 #Adding text to slide 3 title
 title3.text = "Are you ready to RUUUMBLE?! - Python vs JavaScript"
 
+#Adding text box to appear in the middle of the slide, below title
+left = Inches(3)
+top = Inches(2)
+width = height = Inches(1)
+txBox = slide3.shapes.add_textbox(left, top, width, height)
+t_in = txBox.text_frame
+
+p3 = t_in.add_paragraph()
+p3.text = "Naming Conventions"
+p3.font.bold = True
+p3.font.size = Pt(30)
+
+#Adding images
+img_naming_js = "img/naming_js.PNG"
+img_naming_py = "img/naming_py.PNG"
+
+from_left_naming_js = Inches(1.5)
+from_top_naming_js = Inches(4)
+from_left_naming_py = Inches(5.5)
+from_top_naming_py = Inches(4)
+add_naming_js = slide3.shapes.add_picture(img_naming_js, from_left_naming_js, from_top_naming_js)
+add_naming_py = slide3.shapes.add_picture(img_naming_py, from_left_naming_py, from_top_naming_py)
 
 
 
 
 
 
+
+
+
+
+
+
+###############################################################################
+
+
+#Assign layout type to final slide - Title and blank 
+final_slide_layout = prs.slide_layouts[5]
+
+#Add slide 1 to presentation
+final_slide = prs.slides.add_slide(final_slide_layout)
+
+#Main title placeholder
+final_title = final_slide.shapes.title
+
+#Adding text to main title placeholder
+final_title.text = "And now, for something completely different..."
+
+
+###############################################################################
 
 
 
