@@ -366,7 +366,7 @@ final_slide_layout = prs.slide_layouts[5]
 #Add slide 1 to presentation
 final_slide = prs.slides.add_slide(final_slide_layout)
 
-background = slide7.background
+background = final_slide.background
 fill = background.fill
 fill.solid()
 fill.fore_color.rgb = RGBColor(180, 206, 228)
@@ -378,10 +378,10 @@ final_title = final_slide.shapes.title
 final_title.text = "And now, for something completely different..."
 
 #Adding images
-img_meme1 = "img/python_meme.jpg"
-img_meme2 = "img/python_meme(1.1).jpg"
-img_meme3 = "img/python_meme(2.1).jpg"
-img_meme4 = "img/python_meme(3.1).png"
+img_meme1 = "img/python_meme1.jpg"
+img_meme2 = "img/python_meme2.jpg"
+img_meme3 = "img/python_meme3.jpg"
+img_meme4 = "img/python_meme4.png"
 
 from_left_meme1 = Inches(0.5)
 from_top_meme1 = Inches(1.8)
